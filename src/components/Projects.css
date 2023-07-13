@@ -1,0 +1,35 @@
+.project-card {
+  transition: transform 0.5s;
+  padding: 20px; 
+  width: 90%; 
+  max-width: 400px;
+  border-radius: 50px;
+}
+
+.slide-in {
+  animation: slideIn 0.5s;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card-content .MuiAvatar-root {
+  margin-bottom: 10px;
+}
+
+.card-content .MuiTypography-root {
+  margin-bottom: 10px;
+}
