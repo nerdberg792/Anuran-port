@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Card, CardContent, Typography, Grid, Avatar } from '@mui/material';
-import { FaBriefcase } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { Card, CardContent, Typography, Grid, Avatar, Button } from '@mui/material';
 import './Projects.css';
 
 const projects = [
@@ -28,33 +27,50 @@ const projects = [
 ];
 
 const Projects = () => {
-  const [loaded, setLoaded] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {
-    setLoaded(true);
-  }, []);
+  const handleCardChange = (index) => {
+    setCurrentIndex(index);
+  };
 
   return (
-    <div className="bg-gradient-to-b from-purple-500 to-blue-500 h-screen overflow-hidden">
-      <div className="container mx-auto px-4 py-20">
-        <Grid container spacing={2} justifyContent="center">
-          {projects.map((project) => (
-            <Grid item xs={12} sm={6} md={4} key={project.id}>
-              <Card className={`project-card ${loaded ? 'slide-in' : ''}`}>
-                <div className="card-content">
-                  <Avatar className="w-16 h-16 object-cover rounded-full" src={project.companyLogo} alt={project.companyName} />
-                  <Typography variant="h6" component="h2" className="mb-2">
-                    {project.companyName}
-                  </Typography>
-                  <Typography variant="subtitle2" className="text-gray-500">
-                    {project.duration}
-                  </Typography>
-                  <Typography variant="body2">{project.description}</Typography>
-                </div>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
+    <div className="projects-container">
+      <div className="buttons-container">
+        {projects.map((project, index) => (
+          <Button
+            key={project.id}
+            onClick={() => handleCardChange(index)}
+            variant="outlined"
+            className={`card-button ${currentIndex === index ? 'active' : ''}`}
+          >
+            {index + 1}
+          </Button>
+        ))}
+      </div>
+      <div className="card-container">
+        {projects.map((project, index) => (
+          <Card
+            key={project.id}
+            className={`project-card ${currentIndex === index ? 'active' : ''}`}
+            style={{
+              zIndex: projects.length - index,
+              visibility: currentIndex === index ? 'visible' : 'hidden',
+            }}
+          >
+            <div className="card-content">
+              <Avatar className="company-logo" src={project.companyLogo} alt={project.companyName} />
+              <Typography variant="h6" component="h2" className="company-name">
+                {project.companyName}
+              </Typography>
+              <Typography variant="subtitle2" className="duration">
+                {project.duration}
+              </Typography>
+              <Typography variant="body2" className="description">
+                {project.description}
+              </Typography>
+            </div>
+          </Card>
+        ))}
       </div>
     </div>
   );

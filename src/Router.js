@@ -11,7 +11,7 @@ const AppRouter = () => {
       <div>
         <Navbar />
         
-       <Contact/>
+       <Projects/>
        
         <Routes>
         <Route exact path="/" component={Profile} />
