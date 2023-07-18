@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route,Routes} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Profile from './components/Profile';
 import Projects from './components/Projects';
@@ -10,18 +10,15 @@ const AppRouter = () => {
     <Router>
       <div>
         <Navbar />
-        
-       <Projects/>
-       
         <Routes>
-        <Route exact path="/" component={Profile} />
-        <Route path="/projects" component={Projects} />
-        <Route path="/contact" component={Contact} />
+          <Route path="/" element={<Profile />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
-        
       </div>
     </Router>
   );
 };
 
-export default AppRouter ; 
+export default AppRouter;
+

@@ -35,9 +35,9 @@ const Profile = () => {
       >
         {/* Profile Picture */}
         <img
-          className="object-cover w-32 h-32 rounded-full"
-          src="/path/to/profile-picture.jpg"
-          alt="Profile"
+          className="object-cover w-32 h-32"
+          src="./profile-picture.jpg"
+          alt="profile"   
         />
 
         {/* Education and Job */}
@@ -63,16 +63,7 @@ const Profile = () => {
           Currently studying Material Sciences and Metallurgical Engineering
         </p>
         <p className="text-sm text-center">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in elit
-          pretium, vulputate velit eget, vestibulum neque. Donec congue
-          malesuada enim, eu rutrum magna convallis et. Integer dictum lacinia
-          ante, at condimentum sapien efficitur at. Sed non ante sit amet risus
-          finibus aliquam. Vivamus suscipit mauris ut tellus tristique viverra.
-          Mauris eget tortor sed mauris facilisis luctus. Curabitur quis dolor
-          enim. Suspendisse ultricies tellus quis ligula dignissim, id venenatis
-          neque commodo. Quisque dignissim varius feugiat. Curabitur iaculis,
-          felis at commodo pellentesque, dolor tortor facilisis mauris, id
-          luctus lacus nulla sit amet quam. Nulla facilisi. Mauris sed est sem.
+        Anuran Saikia, an Indian software developer, brings two years of experience in Java SpringBoot backend development to the table. With a background in material sciences and metallurgical engineering, they have seamlessly transitioned into the realm of software development. Having worked with reputable companies such as Pentabug, Razorpay, and Nasdaq, Anuran has contributed to the creation of robust backend solutions. Their problem-solving abilities, attention to detail, and proficiency in software development methodologies make them a valuable asset to cross-functional teams. With a passion for continuous learning and a strong foundation in engineering, Anuran is poised to tackle complex challenges and deliver innovative software solutions
         </p>
       </div>
     </div>
